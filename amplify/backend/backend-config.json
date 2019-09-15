@@ -1,0 +1,9 @@
+{
+	"auth": {
+		"healpyebaf6e0c": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	}
+}
