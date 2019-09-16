@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Auth as AWSAuth } from 'aws-amplify';
 import { View } from 'react-native';
 import { Button } from 'react-native-elements';
@@ -56,6 +57,12 @@ export const Auth = ({ navigation: { navigate } }) => {
       />
     </View>
   );
+};
+
+Auth.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 const handleSignIn = ({ email, password, navigate }) => {

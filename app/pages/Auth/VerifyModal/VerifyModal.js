@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { View, Modal } from 'react-native';
 import { Input, Button } from 'react-native-elements';
 
@@ -18,3 +19,9 @@ export const VerifyModal = ({
     </View>
   </Modal>
 );
+
+VerifyModal.propTypes = {
+  modalVisible: PropTypes.func.isRequired,
+  setConfirmationCode: PropTypes.func.isRequired,
+  handleConfirmationCode: PropTypes.func.isRequired,
+};

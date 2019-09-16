@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 import { Input, Button } from 'react-native-elements';
 
 export const SignUp = ({
@@ -31,3 +32,10 @@ export const SignUp = ({
     <Button title="Submit" onPress={handleSignUp} />
   </Fragment>
 );
+
+SignUp.propTypes = {
+  setEmail: PropTypes.func.isRequired,
+  setPassword: PropTypes.func.isRequired,
+  setConfirmPassword: PropTypes.func.isRequired,
+  handleSignUp: PropTypes.func.isRequired,
+};
