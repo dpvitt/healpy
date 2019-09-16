@@ -46,8 +46,7 @@ export const Auth = ({ navigation: { navigate } }) => {
 
 const handleSignIn = ({ email, password, navigate }) => {
   AWSAuth.signIn(email, password)
-    .then((user) => {
-      console.log(user);
+    .then(() => {
       navigate('Home');
     })
     .catch((err) => console.log(err));

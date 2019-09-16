@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SignIn /> should render 1`] = `
-Array [
-  <input
+<Fragment>
+  <Input
     label="Email"
     leftIcon={
       Object {
@@ -12,8 +12,8 @@ Array [
     }
     onChangeText={[Function]}
     placeholder="my@email.com"
-  />,
-  <input
+  />
+  <Input
     label="Password"
     leftIcon={
       Object {
@@ -24,10 +24,10 @@ Array [
     onChangeText={[Function]}
     placeholder="p@ssw0rd123"
     secureTextEntry={true}
-  />,
-  <button
+  />
+  <Button
     onPress={[MockFunction]}
     title="Submit"
-  />,
-]
+  />
+</Fragment>
 `;

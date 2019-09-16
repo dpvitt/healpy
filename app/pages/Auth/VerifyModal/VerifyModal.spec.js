@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import { VerifyModal } from './VerifyModal';
 
 describe('<VerifyModal />', () => {
@@ -9,24 +9,25 @@ describe('<VerifyModal />', () => {
     handleConfirmationCode: jest.fn(),
   };
 
-  const render = renderer.create(<VerifyModal {...props} />);
+  const render = shallow(<VerifyModal {...props} />);
+
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
 
   it('should render', () => {
-    const wrapper = render.toJSON();
-    expect(wrapper).toMatchSnapshot();
+    expect(render).toMatchSnapshot();
   });
 
   it('should call setConfirmPassword when confirm password input updated', () => {
-    const confirmCodeInput = render.root.findByProps({
-      label: 'Confirmation Code',
-    });
-    confirmCodeInput.props.onChangeText('test');
+    const confirmCodeInput = render.find('Input').at(0);
+    confirmCodeInput.prop('onChangeText')('test');
     expect(props.setConfirmationCode).toHaveBeenCalledWith('test');
   });
 
   it('should call handleSignIn when button pressed', () => {
-    const button = render.root.findByProps({ title: 'Submit' });
-    button.props.onPress();
+    const button = render.find('Button');
+    button.prop('onPress')();
     expect(props.handleConfirmationCode).toHaveBeenCalled();
   });
 });

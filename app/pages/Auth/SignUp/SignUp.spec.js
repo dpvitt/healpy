@@ -1,8 +1,8 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import { SignUp } from './SignUp';
 
-describe('<SignUp />', () => {
+describe('<SignIn />', () => {
   const props = {
     setEmail: jest.fn(),
     setPassword: jest.fn(),
@@ -10,46 +10,37 @@ describe('<SignUp />', () => {
     handleSignUp: jest.fn(),
   };
 
-  const render = renderer.create(<SignUp {...props} />);
+  const render = shallow(<SignUp {...props} />);
 
   afterEach(() => {
     jest.clearAllMocks();
   });
 
   it('should render', () => {
-    const wrapper = render.toJSON();
-    expect(wrapper).toMatchSnapshot();
+    expect(render).toMatchSnapshot();
   });
 
   it('should call setEmail when email input updated', () => {
-    const emailInput = render.root.findByProps({ label: 'Email' });
-    emailInput.props.onChangeText('test');
+    const emailInput = render.find('Input').at(0);
+    emailInput.prop('onChangeText')('test');
     expect(props.setEmail).toHaveBeenCalledWith('test');
   });
 
   it('should call setPassword when password input updated', () => {
-    const emailInput = render.root.findByProps({ label: 'Password' });
-    emailInput.props.onChangeText('test');
+    const passwordInput = render.find('Input').at(1);
+    passwordInput.prop('onChangeText')('test');
     expect(props.setPassword).toHaveBeenCalledWith('test');
   });
 
   it('should call setConfirmPassword when confirm password input updated', () => {
-    const passwordInput = render.root.findByProps({ label: 'Password' });
-    passwordInput.props.onChangeText('test');
-    expect(props.setPassword).toHaveBeenCalledWith('test');
-  });
-
-  it('should call setConfirmPassword when confirm password input updated', () => {
-    const confirmPasswordInput = render.root.findByProps({
-      label: 'Confirm Password',
-    });
-    confirmPasswordInput.props.onChangeText('test');
+    const passwordInput = render.find('Input').at(2);
+    passwordInput.prop('onChangeText')('test');
     expect(props.setConfirmPassword).toHaveBeenCalledWith('test');
   });
 
   it('should call handleSignIn when button pressed', () => {
-    const button = render.root.findByProps({ title: 'Submit' });
-    button.props.onPress();
+    const button = render.find('Button');
+    button.prop('onPress')();
     expect(props.handleSignUp).toHaveBeenCalled();
   });
 });

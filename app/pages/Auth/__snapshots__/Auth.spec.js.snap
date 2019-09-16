@@ -10,100 +10,21 @@ exports[`<Auth /> should render 1`] = `
     }
   }
 >
-  <input
-    label="Email"
-    leftIcon={
-      Object {
-        "name": "envelope",
-        "type": "font-awesome",
-      }
-    }
-    onChangeText={[Function]}
-    placeholder="my@email.com"
+  <SignUp
+    handleSignUp={[Function]}
+    setConfirmPassword={[Function]}
+    setEmail={[Function]}
+    setPassword={[Function]}
   />
-  <input
-    label="Password"
-    leftIcon={
-      Object {
-        "name": "lock",
-        "type": "font-awesome",
-      }
-    }
-    onChangeText={[Function]}
-    placeholder="p@ssw0rd123"
-    secureTextEntry={true}
+  <SignIn
+    handleSignIn={[Function]}
+    setEmail={[Function]}
+    setPassword={[Function]}
   />
-  <input
-    label="Confirm Password"
-    leftIcon={
-      Object {
-        "name": "lock",
-        "type": "font-awesome",
-      }
-    }
-    onChangeText={[Function]}
-    placeholder="p@ssw0rd123"
-    secureTextEntry={true}
+  <VerifyModal
+    handleConfirmationCode={[Function]}
+    modalVisible={false}
+    setConfirmationCode={[Function]}
   />
-  <button
-    onPress={[Function]}
-    title="Submit"
-  />
-  <input
-    label="Email"
-    leftIcon={
-      Object {
-        "name": "envelope",
-        "type": "font-awesome",
-      }
-    }
-    onChangeText={[Function]}
-    placeholder="my@email.com"
-  />
-  <input
-    label="Password"
-    leftIcon={
-      Object {
-        "name": "lock",
-        "type": "font-awesome",
-      }
-    }
-    onChangeText={[Function]}
-    placeholder="p@ssw0rd123"
-    secureTextEntry={true}
-  />
-  <button
-    onPress={[Function]}
-    title="Submit"
-  />
-  <Modal
-    hardwareAccelerated={false}
-    visible={false}
-  >
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "justifyContent": "center",
-        }
-      }
-    >
-      <input
-        label="Confirmation Code"
-        leftIcon={
-          Object {
-            "name": "lock",
-            "type": "font-awesome",
-          }
-        }
-        onChangeText={[Function]}
-      />
-      <button
-        onPress={[Function]}
-        title="Submit"
-      />
-    </View>
-  </Modal>
 </View>
 `;

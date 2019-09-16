@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import { SignIn } from './SignIn';
 
 describe('<SignIn />', () => {
@@ -9,32 +9,31 @@ describe('<SignIn />', () => {
     handleSignIn: jest.fn(),
   };
 
-  const render = renderer.create(<SignIn {...props} />);
+  const render = shallow(<SignIn {...props} />);
 
   afterEach(() => {
     jest.clearAllMocks();
   });
 
   it('should render', () => {
-    const wrapper = render.toJSON();
-    expect(wrapper).toMatchSnapshot();
+    expect(render).toMatchSnapshot();
   });
 
   it('should call setEmail when email input updated', () => {
-    const emailInput = render.root.findByProps({ label: 'Email' });
-    emailInput.props.onChangeText('test');
+    const emailInput = render.find('Input').at(0);
+    emailInput.prop('onChangeText')('test');
     expect(props.setEmail).toHaveBeenCalledWith('test');
   });
 
   it('should call setPassword when password input updated', () => {
-    const passwordInput = render.root.findByProps({ label: 'Password' });
-    passwordInput.props.onChangeText('test');
+    const passwordInput = render.find('Input').at(1);
+    passwordInput.prop('onChangeText')('test');
     expect(props.setPassword).toHaveBeenCalledWith('test');
   });
 
   it('should call handleSignIn when button pressed', () => {
-    const button = render.root.findByProps({ title: 'Submit' });
-    button.props.onPress();
+    const button = render.find('Button');
+    button.prop('onPress')();
     expect(props.handleSignIn).toHaveBeenCalled();
   });
 });
