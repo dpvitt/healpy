@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SignUp /> should render 1`] = `
+Array [
+  <input
+    label="Email"
+    leftIcon={
+      Object {
+        "name": "envelope",
+        "type": "font-awesome",
+      }
+    }
+    onChangeText={[Function]}
+    placeholder="my@email.com"
+  />,
+  <input
+    label="Password"
+    leftIcon={
+      Object {
+        "name": "lock",
+        "type": "font-awesome",
+      }
+    }
+    onChangeText={[Function]}
+    placeholder="p@ssw0rd123"
+    secureTextEntry={true}
+  />,
+  <input
+    label="Confirm Password"
+    leftIcon={
+      Object {
+        "name": "lock",
+        "type": "font-awesome",
+      }
+    }
+    onChangeText={[Function]}
+    placeholder="p@ssw0rd123"
+    secureTextEntry={true}
+  />,
+  <button
+    onPress={[MockFunction]}
+    title="Submit"
+  />,
+]
+`;

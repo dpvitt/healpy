@@ -10,7 +10,7 @@ module.exports = {
     },
     sourceType: 'module',
   },
-  plugins: ['react', 'react-native', 'import'],
+  plugins: ['react', 'react-native'],
   rules: {
     'react/jsx-filename-extension': 'off',
     'react/jsx-uses-vars': 1,

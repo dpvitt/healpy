@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Auth /> should render 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <input
+    label="Email"
+    leftIcon={
+      Object {
+        "name": "envelope",
+        "type": "font-awesome",
+      }
+    }
+    onChangeText={[Function]}
+    placeholder="my@email.com"
+  />
+  <input
+    label="Password"
+    leftIcon={
+      Object {
+        "name": "lock",
+        "type": "font-awesome",
+      }
+    }
+    onChangeText={[Function]}
+    placeholder="p@ssw0rd123"
+    secureTextEntry={true}
+  />
+  <input
+    label="Confirm Password"
+    leftIcon={
+      Object {
+        "name": "lock",
+        "type": "font-awesome",
+      }
+    }
+    onChangeText={[Function]}
+    placeholder="p@ssw0rd123"
+    secureTextEntry={true}
+  />
+  <button
+    onPress={[Function]}
+    title="Submit"
+  />
+  <input
+    label="Email"
+    leftIcon={
+      Object {
+        "name": "envelope",
+        "type": "font-awesome",
+      }
+    }
+    onChangeText={[Function]}
+    placeholder="my@email.com"
+  />
+  <input
+    label="Password"
+    leftIcon={
+      Object {
+        "name": "lock",
+        "type": "font-awesome",
+      }
+    }
+    onChangeText={[Function]}
+    placeholder="p@ssw0rd123"
+    secureTextEntry={true}
+  />
+  <button
+    onPress={[Function]}
+    title="Submit"
+  />
+  <Modal
+    hardwareAccelerated={false}
+    visible={false}
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <input
+        label="Confirmation Code"
+        leftIcon={
+          Object {
+            "name": "lock",
+            "type": "font-awesome",
+          }
+        }
+        onChangeText={[Function]}
+      />
+      <button
+        onPress={[Function]}
+        title="Submit"
+      />
+    </View>
+  </Modal>
+</View>
+`;

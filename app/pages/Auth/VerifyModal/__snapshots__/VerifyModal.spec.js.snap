@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VerifyModal /> should render 1`] = `
+<Modal
+  hardwareAccelerated={false}
+  visible={false}
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <input
+      label="Confirmation Code"
+      leftIcon={
+        Object {
+          "name": "lock",
+          "type": "font-awesome",
+        }
+      }
+      onChangeText={[Function]}
+    />
+    <button
+      onPress={[MockFunction]}
+      title="Submit"
+    />
+  </View>
+</Modal>
+`;

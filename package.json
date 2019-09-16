@@ -6,14 +6,15 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "formatter": "prettier 'src/**/*.{js,jsx,css,scss,md}' --write"
+    "unit-watch": "jest --watch",
+    "unit-test": "jest"
   },
   "dependencies": {
     "aws-amplify": "^1.1.40",
     "aws-amplify-react-native": "^2.1.19",
     "expo": "^34.0.1",
     "react": "16.8.3",
-    "react-dom": "^16.8.6",
+    "react-dom": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
     "react-native-elements": "^1.2.0",
     "react-native-gesture-handler": "^1.4.1",
@@ -28,7 +29,9 @@
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-native": "^3.7.0",
-    "prettier": "^1.18.2"
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
+    "react-test-renderer": "16.8.3"
   },
   "private": true
 }
