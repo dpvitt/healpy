@@ -1,0 +1,17 @@
+type User @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  email: String!
+  name: String!
+  conversations: [Conversation] @connection(name: "UserConversation")
+}
+
+type Conversation @model @auth(rules: [{ allow: owner }]) {
+  id: ID
+  situation: String
+  thought: String
+  feeling: String
+  evidence: String
+  alternatives: String
+  result: String
+  user: User @connection(name: "UserConversation")
+}

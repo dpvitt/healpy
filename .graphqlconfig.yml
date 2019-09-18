@@ -1,0 +1,14 @@
+projects:
+  healpy:
+    schemaPath: amplify/backend/api/healpy/build/schema.graphql
+    includes:
+      - app/src/graphql/**/*.js
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: javascript
+        generatedFileName: ''
+        docsFilePath: app/graphql
+        region: eu-west-1
+        maxDepth: 3
