@@ -21,7 +21,7 @@ export const VerifyModal = ({
 );
 
 VerifyModal.propTypes = {
-  modalVisible: PropTypes.func.isRequired,
+  modalVisible: PropTypes.bool.isRequired,
   setConfirmationCode: PropTypes.func.isRequired,
   handleConfirmationCode: PropTypes.func.isRequired,
 };

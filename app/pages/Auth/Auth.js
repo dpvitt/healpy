@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Auth as AWSAuth } from 'aws-amplify';
 import { View } from 'react-native';
@@ -7,6 +7,7 @@ import { Button } from 'react-native-elements';
 import { SignIn } from './SignIn';
 import { SignUp } from './SignUp';
 import { VerifyModal } from './VerifyModal';
+import { UserContext } from '../../providers/UserContextProvider';
 
 const SIGN_IN = 'sign_in_mode';
 const SIGN_UP = 'sign_up_mode';
@@ -18,6 +19,7 @@ export const Auth = ({ navigation: { navigate } }) => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [confirmationCode, setConfirmationCode] = useState('');
   const [modalVisible, setModalVisible] = useState(false);
+  const [, setUser] = useContext(UserContext);
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -26,9 +28,9 @@ export const Auth = ({ navigation: { navigate } }) => {
           setEmail={setEmail}
           setPassword={setPassword}
           setConfirmPassword={setConfirmPassword}
-          handleSignUp={() =>
-            handleSignUp({ email, password, confirmPassword, setModalVisible })
-          }
+          handleSignUp={() => {
+            handleSignUp({ email, password, confirmPassword, setModalVisible });
+          }}
         />
       ) : null}
 
@@ -36,7 +38,10 @@ export const Auth = ({ navigation: { navigate } }) => {
         <SignIn
           setEmail={setEmail}
           setPassword={setPassword}
-          handleSignIn={() => handleSignIn({ email, password, navigate })}
+          handleSignIn={() => {
+            handleSignIn({ email, password, navigate });
+            setCurrentUser({ setUser });
+          }}
         />
       ) : null}
 
@@ -46,14 +51,15 @@ export const Auth = ({ navigation: { navigate } }) => {
       <VerifyModal
         modalVisible={modalVisible}
         setConfirmationCode={setConfirmationCode}
-        handleConfirmationCode={() =>
+        handleConfirmationCode={() => {
           handleConfirmationCode({
             email,
             confirmationCode,
             setModalVisible,
             navigate,
-          })
-        }
+          });
+          setCurrentUser({ setUser });
+        }}
       />
     </View>
   );
@@ -102,4 +108,10 @@ const handleConfirmationCode = ({
       navigate('Home');
     })
     .catch((err) => console.log(err));
+};
+
+const setCurrentUser = ({ setUser }) => {
+  AWSAuth.currentUserInfo()
+    .then((user) => setUser(user))
+    .catch(() => navigate('Auth'));
 };

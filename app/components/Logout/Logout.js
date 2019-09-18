@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { View } from 'react-native';
 import { Auth as AWSAuth } from 'aws-amplify';
 import { Button } from 'react-native-elements';
 
 export const Logout = ({ navigate }) => (
-  <Button title="Sign Out" onPress={() => handleSignOut({ navigate })} />
+  <View style={{ flex: 1, justifyContent: 'end', alignItems: 'center' }}>
+    <Button title="Sign Out" onPress={() => handleSignOut({ navigate })} />
+  </View>
 );
 
 Logout.propTypes = {

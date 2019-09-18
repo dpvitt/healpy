@@ -10,11 +10,16 @@
     "unit-test": "jest"
   },
   "dependencies": {
+    "@react-native-community/netinfo": "^4.2.1",
     "aws-amplify": "^1.1.40",
     "aws-amplify-react-native": "^2.1.19",
+    "aws-appsync": "^2.0.0",
+    "aws-appsync-react": "^2.0.0",
     "expo": "^34.0.1",
+    "graphql-tag": "^2.10.1",
     "prop-types": "^15.7.2",
     "react": "16.8.3",
+    "react-apollo": "^2.5.8",
     "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
     "react-native-elements": "^1.2.0",
     "react-native-gesture-handler": "^1.4.1",

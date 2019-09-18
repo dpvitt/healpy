@@ -4,6 +4,7 @@
 export const getUser = `query GetUser($id: ID!) {
   getUser(id: $id) {
     id
+    email
     name
     conversations {
       items {
@@ -30,6 +31,7 @@ export const listUsers = `query ListUsers(
   listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
+      email
       name
       conversations {
         nextToken
@@ -51,6 +53,7 @@ export const getConversation = `query GetConversation($id: ID!) {
     result
     user {
       id
+      email
       name
       conversations {
         nextToken
@@ -77,6 +80,7 @@ export const listConversations = `query ListConversations(
       result
       user {
         id
+        email
         name
         owner
       }

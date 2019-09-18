@@ -4,6 +4,7 @@
 export const createUser = `mutation CreateUser($input: CreateUserInput!) {
   createUser(input: $input) {
     id
+    email
     name
     conversations {
       items {
@@ -25,6 +26,7 @@ export const createUser = `mutation CreateUser($input: CreateUserInput!) {
 export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
   updateUser(input: $input) {
     id
+    email
     name
     conversations {
       items {
@@ -46,6 +48,7 @@ export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
 export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
   deleteUser(input: $input) {
     id
+    email
     name
     conversations {
       items {
@@ -75,6 +78,7 @@ export const createConversation = `mutation CreateConversation($input: CreateCon
     result
     user {
       id
+      email
       name
       conversations {
         nextToken
@@ -96,6 +100,7 @@ export const updateConversation = `mutation UpdateConversation($input: UpdateCon
     result
     user {
       id
+      email
       name
       conversations {
         nextToken
@@ -117,6 +122,7 @@ export const deleteConversation = `mutation DeleteConversation($input: DeleteCon
     result
     user {
       id
+      email
       name
       conversations {
         nextToken

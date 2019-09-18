@@ -4,6 +4,7 @@
 export const onCreateUser = `subscription OnCreateUser($owner: String!) {
   onCreateUser(owner: $owner) {
     id
+    email
     name
     conversations {
       items {
@@ -25,6 +26,7 @@ export const onCreateUser = `subscription OnCreateUser($owner: String!) {
 export const onUpdateUser = `subscription OnUpdateUser($owner: String!) {
   onUpdateUser(owner: $owner) {
     id
+    email
     name
     conversations {
       items {
@@ -46,6 +48,7 @@ export const onUpdateUser = `subscription OnUpdateUser($owner: String!) {
 export const onDeleteUser = `subscription OnDeleteUser($owner: String!) {
   onDeleteUser(owner: $owner) {
     id
+    email
     name
     conversations {
       items {
@@ -75,6 +78,7 @@ export const onCreateConversation = `subscription OnCreateConversation($owner: S
     result
     user {
       id
+      email
       name
       conversations {
         nextToken
@@ -96,6 +100,7 @@ export const onUpdateConversation = `subscription OnUpdateConversation($owner: S
     result
     user {
       id
+      email
       name
       conversations {
         nextToken
@@ -117,6 +122,7 @@ export const onDeleteConversation = `subscription OnDeleteConversation($owner: S
     result
     user {
       id
+      email
       name
       conversations {
         nextToken
